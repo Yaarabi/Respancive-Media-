@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #F4F5F0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: "nav nav" "main main" "footer footer";
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    nav {
+        display: grid;
+        grid-area: nav;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        h2 {
+            color: orangered;
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            border: none;
+        }
+
+        .link {
+            width: 30vw;
+            display: flex;
+            justify-content: space-around;
+        }
+        .dropdown{
+            display: none;
+        }
+    }
+
+    main {
+        display: grid;
+        grid-area: main;
+
+        article {
+            display: flex;
+            padding-left: 20px;
+            padding-right: 20px;
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                .btn {
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-direction: row;
+                }
+
+            }
+
+            img {
+                height: 100%;
+                width: 50%;
+            }
+        }
+
+    }
+}
+
+footer {
+    display: grid;
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .icon {
+        height: 25px;
+        width: 25px;
+    }
+
+}
+@media (max-width:700px) {
+    body{
+        height: 140vh;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto auto 50px auto;
+        grid-template-areas: "nav" "main" "." "footer";
+        nav{
+            height: 15vh;
+            .link{
+                display: none;
+            }
+            .sign{
+                display: none;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            
+            .dropdown-content {
+                display: none;
+                background-color: #f9f9f9;
+                
+                
+            }
+            
+            .dropdown-content a {
+                color: black;
+                position: relative;
+                right: 10px;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            
+            .dropdown-content a:hover {
+                background-color: orangered;
+                color: #F4F5F0;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                padding: 12px 16px;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+        article{
+            text-align: center;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-evenly;
+            padding-left: 0;
+            padding-right: 0;
+            height: 100vh;
+            div{
+                height: 60%;
+                display: flex;
+                align-content: space-between;
+                .btn{
+                    display: flex;
+                    flex-direction: column !important;
+                    align-items: center;
+                }
+            }
+            .asfor {
+                height: 40%;
+                width: 100%;
+            }
+        }
+        footer{
+            height: 15vh;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .policy{
+                width: 80%;
+            }
+            .contact{
+               width: 70%; 
+            }
+        }
+    }
+}
